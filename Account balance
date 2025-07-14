@@ -1,31 +1,24 @@
 #include <stdio.h>
-int main() 
+int main() {
+    int balance, code, amount;
+    scanf("%d", &balance);
+    scanf("%d", &code);
+    scanf("%d", &amount);
+    if (code == 1)
 {
-int balance, choice, amount;
-scanf("%d %d", &balance, &choice);
-switch(choice) 
+        balance += amount;
+        printf("%d\n", balance);
+    } 
+    else if (code == 2)
 {
-case 1:
-printf("Enter amount to deposit: ");
-scanf("%d", &amount);
-balance += amount;
-printf("Amount Deposited Successfully\n");
-printf("Current Balance: %d\n", balance);
-break;
-case 2:
-printf("Enter amount to withdraw: ");
-scanf("%d", &amount);
-if (amount > balance) 
-{
-printf("Insufficient Balance\n");
-} else {
-balance -= amount;
-printf("Amount Withdrawn Successfully\n");
-printf("Current Balance: %d\n", balance);
-}
-break;
-default:
-printf("Invalid Input\n");
-}
-return 0;
+        if (amount > balance) {
+            printf("Insufficient Balance\n");
+        } else {
+            balance -= amount;
+            printf("%d\n", balance);
+        }
+    } else {
+        printf("Invalid Input\n");
+    }
+    return 0;
 }
