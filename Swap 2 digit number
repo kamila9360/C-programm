@@ -1,13 +1,27 @@
-#include <stdio.h>
-int main() 
+#include<stdio.h>
+int main()
 {
-int num, tens, units, swapped;
-scanf("%d", &num);
-if (num >= 10 && num <= 99 && num % 10 != 0 && num / 10 != 0) {
-tens = num / 10;
-units = num % 10;
-swapped = units * 10 + tens;
-printf("%d\n", swapped);
-}
-return 0;
+    int num;
+    scanf("%d", &num);
+    int temp = num, count = 0;
+    while (temp > 0)
+{
+    temp /= 10;
+    count++;
+ }
+    if (count == 1) 
+{
+    printf("STDOUT\n");
+   } 
+    else 
+    {
+        while (num >= 100) 
+{
+         num /= 10;
+     }
+        int tens = num / 10;
+        int units = num % 10;
+        printf("%d%d\n", units, tens);
+    }
+    return 0;
 }
